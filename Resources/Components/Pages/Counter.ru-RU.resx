@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <data name="Header" xml:space="preserve">
+        <value>Счётчик</value>
+    </data>
+    <data name="CurrentCount" xml:space="preserve">
+        <value>Текущее кол-во</value>
+    </data>    
+    <data name="ClickMe" xml:space="preserve">
+        <value>Нажми меня</value>
+    </data>     
+</root>

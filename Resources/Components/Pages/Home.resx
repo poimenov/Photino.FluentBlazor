@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <data name="Header" xml:space="preserve">
+        <value>Hello, world!</value>
+    </data>   
+    <data name="Text" xml:space="preserve">
+        <value>Welcome to your new Fluent Blazor app.</value>
+    </data>        
+</root>

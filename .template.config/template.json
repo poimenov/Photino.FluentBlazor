@@ -1,0 +1,13 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "TryPhotino.Me",
+    "classifications": [ "Photino", "Blazor", "Desktop", "Fluent" ],
+    "identity": "Photino.FluentBlazor",
+    "name": "Photino FluentBlazor DesktopApp",
+    "shortName": "photinofluentblazor",
+    "sourceName": "Photino.FluentBlazor",
+    "tags": {
+      "language": "C#",
+      "type": "project"
+    }   
+}

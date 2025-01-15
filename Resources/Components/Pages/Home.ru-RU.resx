@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <data name="Header" xml:space="preserve">
+        <value>Здравствуй, Мир!</value>
+    </data>   
+    <data name="Text" xml:space="preserve">
+        <value>Добро пожаловать в Ваше новое Fluent Blazor приложение.</value>
+    </data>        
+</root>

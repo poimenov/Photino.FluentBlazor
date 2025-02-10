@@ -1,7 +1,9 @@
 ﻿@page "/weather"
 @attribute [StreamRendering]
 @using Microsoft.Extensions.Localization
+@using Microsoft.Extensions.Logging
 @inject IStringLocalizer<Weather> localizer
+@inject ILogger<Weather> logger
 
 <h1>@localizer["Header"]</h1>
 
@@ -34,11 +36,12 @@ else
         var summaries = new[] { "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering",
 "Scorching" };
         forecasts = Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = startDate.AddDays(index),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = summaries[Random.Shared.Next(summaries.Length)]
-            }).AsQueryable();
+        {
+            Date = startDate.AddDays(index),
+            TemperatureC = Random.Shared.Next(-20, 55),
+            Summary = summaries[Random.Shared.Next(summaries.Length)]
+        }).AsQueryable();
+        logger.LogInformation("Weather data loaded.");
     }
 
     private class WeatherForecast

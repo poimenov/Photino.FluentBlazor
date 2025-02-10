@@ -1,16 +1,15 @@
 using System.Drawing;
+using System.Globalization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Microsoft.FluentUI.AspNetCore.Components;
 using Photino.Blazor;
 using Photino.FluentBlazor.Components;
-using log4net;
-using System.Reflection;
-using Microsoft.Extensions.Options;
-using System.Globalization;
 using Photino.FluentBlazor.Services;
 using Photino.FluentBlazor.Services.Interfaces;
+using log4net.Config;
 
 namespace Photino.FluentBlazor;
 
@@ -38,7 +37,7 @@ public class Program
         {
             options.ResourcesPath = "Resources";
         });
-        builder.Services.AddSingleton<ILog>(LogManager.GetLogger(MethodBase.GetCurrentMethod()?.DeclaringType ?? typeof(Program)));
+
         builder.Services.AddScoped(sp => new HttpClient(new HttpClientHandler(), disposeHandler: true));
         builder.Services.AddTransient<IPlatformService, PlatformService>();
         builder.Services.AddTransient<IProcessService, ProcessService>();
@@ -54,6 +53,8 @@ public class Program
         {
             Environment.SetEnvironmentVariable(DATA_DIRECTORY, app.Services.GetRequiredService<IOptions<AppSettings>>().Value.AppDataPath);
         }
+
+        XmlConfigurator.Configure(new FileInfo("log4net.config"));
         // customize window
         app.MainWindow
             .SetSize(new Size(800, 500))

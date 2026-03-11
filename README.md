@@ -4,7 +4,7 @@
 This is a C# project template for the create [Photino.net](https://www.tryphotino.io/) desktop application with using [FluentUI.Blazor](https://www.fluentui-blazor.net/).
 
 ### Prerequisites
-.Net SDK 8.0
+.Net SDK 10.0
 
 ### Installation
 

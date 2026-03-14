@@ -29,6 +29,6 @@ dotnet new install ./
 ### Usage
 ```bash
 dotnet new photinofluentblazor -o MyApp
-cd MyApp
+cd MyApp/src/MyApp
 dotnet run
 ```
